@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrasi Akun - PT Contoh Jaya</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f2f5f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      text-align: center;
+      color: #005baa;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #005baa;
+      color: #fff;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #003f7d;
+    }
+
+    .text-center {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    a {
+      color: #005baa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 30px 15px;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Registrasi Pelamar</h2>
+    <form id="registerForm">
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" id="nama" name="nama" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="hp">Nomor HP</label>
+      <input type="tel" id="hp" name="hp" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Lanjut ke Form Lamaran</button>
+    </form>
+
+    <div class="text-center">
+      Sudah punya akun? <a href="login.html">Login di sini</a>
+    </div>
+  </div>
+<script>
+  document.getElementById("registerForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Stop submit
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    localStorage.setItem("userEmail", email);
+    localStorage.setItem("userPassword", password);
+
+    alert("Registrasi berhasil! Silakan login.");
+    window.location.href = "login.html";
+  });
+</script>
+</body>
+</html>
